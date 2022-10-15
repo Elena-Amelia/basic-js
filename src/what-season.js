@@ -12,15 +12,14 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
-  let season;
-  if (arguments.length === 0) { return season = 'Unable to determine the time of year!'; }
+  if (arguments.length === 0) { return 'Unable to determine the time of year!'; }
   if ( isNaN(Date.parse(date))) { throw new Error('Invalid date!');}
   try {
-    let y = date.getUTCMonth();
-    }
+      date.getUTCMonth();
+  }
   catch(err) {
        throw new Error("Invalid date!");
-     }
+  }
 
   let x = date.getUTCMonth();
   
@@ -35,7 +34,7 @@ function getSeason(date) {
   }
 
   if (!date.hasOwnProperty('getUTCTime')) { throw new Error('Invalid date!');}
-  
+
 } 
 
 module.exports = {
