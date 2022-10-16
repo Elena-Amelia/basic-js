@@ -18,7 +18,7 @@ function transform(arr) {
   if (arr.length === 0) { return []; }
   let arrInit = arr.slice();
   let newArr = [];
-  for ( let i = 0; i < arrInit.length; i++) {
+  for (let i = 0; i < arrInit.length; i++) {
     if (arrInit[i] === '--discard-next') {
       arrInit.splice(i - 1, 2);
       continue;
@@ -27,13 +27,14 @@ function transform(arr) {
       if (i === 0) { continue; }
       else { 
         newArr.pop();
-        continue;}
+        continue;
+      }
     }
-     
-    else if (arrInit[i]=== '--double-next') {
+    else if (arrInit[i] === '--double-next') {
       if (i === arrInit.length-1 ) { continue; }
       newArr.push(arrInit[i + 1]);
-      continue;}
+      continue;
+    }
     else if (arrInit[i] === '--double-prev') {
       if (i === 0 ) { continue; }
       newArr.push(arrInit[i - 1]);
